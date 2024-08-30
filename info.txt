@@ -1,0 +1,72 @@
+police view
+    1 leaflet map
+    2 pin in map 
+    3 details of that pin location
+    4 details inc. (all the students and the residential details)
+
+
+workflow -> [
+    police login,
+    police can give access to colleges,
+    college can give access each department hod
+]
+
+
+police model -> {
+    (abstract user),
+    station,
+}
+
+Student model -> {
+    name, 
+    regno,
+    phone no,
+    dob,
+    profile,
+    aadhar_number,
+    email_id,
+    college_name, (college table)
+    faculty, (faculties in a college)
+    department, (department in a faculty)
+    course_name, (name of course in that faculty)
+    year of studying, 
+    passingout_year,
+    stay-address, (address table)
+    parent-address, (address table)
+    previous-cases,
+}
+
+Address model -> {
+    door-no,
+    apartment name,
+    address-line-1,
+    address-line-2,
+    city,
+    postal-code,
+    state,
+    latitude,
+    longitude,
+}
+
+college model -> {
+    principal name,
+    college name, (abstract user)
+    address, (address table)
+    faculties, (mtm  faculty table)
+}
+
+faculty model -> {
+    faculty name,
+    departments, (mtm department table)
+}
+
+department model -> {
+    hod name, (abstract user)
+    department name,
+    program, (mtm program table)
+}
+
+course model -> {
+    course name,
+    course duration,
+}   
